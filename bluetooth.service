@@ -7,4 +7,4 @@ Type=simple
 BusName=org.bluez
 ExecStart=/usr/libexec/bluetooth/bluetoothd
 NotifyAccess=main
-LiimtNPROC=1
+LimtNPROC=1
