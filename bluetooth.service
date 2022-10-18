@@ -1,0 +1,10 @@
+[Unit]
+Description=Bluetooth service
+Documentation=man:bluetoothd(8)
+
+[Service]
+Type=simple
+BusName=org.bluez
+ExecStart=/usr/libexec/bluetoothd
+NotifyAccess=main
+LiimtNPROC=1
