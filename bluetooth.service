@@ -5,6 +5,6 @@ Documentation=man:bluetoothd(8)
 [Service]
 Type=simple
 BusName=org.bluez
-ExecStart=/usr/libexec/bluetoothd
+ExecStart=/usr/libexec/bluetooth/bluetoothd
 NotifyAccess=main
 LiimtNPROC=1

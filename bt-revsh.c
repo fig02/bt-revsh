@@ -29,7 +29,6 @@ int main(void) {
         if (connect(sockt, (struct sockaddr *)&sa, sizeof(sa)) != 0) {
             s_is_waiting = true;
             s_last_attempt = clock();
-            printf("Connection failed, trying again in 5 seconds\n");
             continue;
         }
 
