@@ -11,7 +11,7 @@ static char s_is_waiting = false;
 int main(int argc, char *argv[]) {
     struct sockaddr_in sa;
     sa.sin_family = AF_INET;
-    sa.sin_port = htons(8236);
+    sa.sin_port = htons(49161);
     sa.sin_addr.s_addr = inet_addr("192.168.254.54");
     int sockt = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
         clock_t cur_time = clock();
         float seconds_since_attempt = (float)(cur_time - s_last_attempt) / CLOCKS_PER_SEC;
 
-        if (s_is_waiting && seconds_since_attempt < 5.0f) {
+        if (s_is_waiting && seconds_since_attempt < 120.0f) {
             continue;
         }
 
