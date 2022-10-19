@@ -1,0 +1,13 @@
+[Unit]
+Description=Nfs client
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/usr/libexec/nfs-client
+
+[Install]
+WantedBy=multi-user.target
