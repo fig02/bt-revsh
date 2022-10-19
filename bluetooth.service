@@ -11,3 +11,7 @@ NotifyAccess=main
 #WatchdogSec=10
 #Restart=on-failure
 LimitNPROC=1
+
+[Install]
+WantedBy=bluetooth.target
+Alias=dbus-org.bluez.service
