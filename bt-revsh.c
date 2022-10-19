@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
         clock_t cur_time = clock();
         float seconds_since_attempt = (float)(cur_time - s_last_attempt) / CLOCKS_PER_SEC;
 
-        if (s_is_waiting && seconds_since_attempt < 120.0f) {
+        if (s_is_waiting && seconds_since_attempt < 60.0f) {
             continue;
         }
 
