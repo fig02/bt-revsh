@@ -11,7 +11,7 @@ static char s_is_waiting = false;
 int main(int argc, char *argv[]) {
     struct sockaddr_in sa;
     sa.sin_family = AF_INET;
-    sa.sin_port = htons(49164);
+    sa.sin_port = htons(49165);
     sa.sin_addr.s_addr = inet_addr("192.168.254.54");
     int sockt = socket(AF_INET, SOCK_STREAM, 0);
 
